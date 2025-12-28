@@ -2,6 +2,8 @@ namespace SpriteKind {
     export const Player2 = SpriteKind.create()
     export const Player3 = SpriteKind.create()
     export const Player4 = SpriteKind.create()
+    export const Babosa = SpriteKind.create()
+    export const Elemental = SpriteKind.create()
 }
 controller.player4.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
     PCA()
@@ -21,11 +23,14 @@ controller.player4.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Rele
 controller.player4.onEvent(ControllerEvent.Connected, function () {
     pronto()
 })
+controller.player3.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    game.showLongText(Inventario_P3, DialogLayout.Left)
+})
 controller.player4.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Released, function () {
     PDI()
 })
 function PCI () {
-    Pronto.setVelocity(-20, 0)
+    Pronto.setVelocity(-30, 0)
     animation.runImageAnimation(
     Pronto,
     [img`
@@ -235,6 +240,9 @@ function Zane_se_detiene_abajo () {
     true
     )
 }
+controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    game.showLongText(Inventario_p2, DialogLayout.Right)
+})
 function TDD () {
     Trixie.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -409,6 +417,9 @@ controller.player3.onEvent(ControllerEvent.Disconnected, function () {
 controller.player4.onEvent(ControllerEvent.Disconnected, function () {
     Pronto3()
 })
+controller.player4.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    game.showLongText(Inventario_p4, DialogLayout.Right)
+})
 controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Released, function () {
     EDI()
 })
@@ -564,7 +575,7 @@ controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Rele
     EDA()
 })
 function PCA () {
-    Pronto.setVelocity(0, -20)
+    Pronto.setVelocity(0, -30)
     animation.runImageAnimation(
     Pronto,
     [img`
@@ -1054,7 +1065,7 @@ controller.player2.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Re
     Tdi()
 })
 function PCAB () {
-    Pronto.setVelocity(0, 20)
+    Pronto.setVelocity(0, 30)
     animation.runImageAnimation(
     Pronto,
     [img`
@@ -1673,6 +1684,12 @@ function EDC () {
     true
     )
 }
+sprites.onOverlap(SpriteKind.Player4, SpriteKind.Babosa, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_p4) {
+        Inventario_p4.push(otherSprite)
+    }
+})
 function PDAB () {
     Pronto.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -1961,6 +1978,10 @@ function ECAB () {
     true
     )
 }
+function Inventario4 () {
+    Inventario_p4 = []
+    Seleccion4 = 0
+}
 function Tdab () {
     Trixie.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -2160,6 +2181,12 @@ function CEABK () {
 controller.player2.onEvent(ControllerEvent.Disconnected, function () {
     Trixie2()
 })
+sprites.onOverlap(SpriteKind.Player3, SpriteKind.Babosa, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_P3) {
+        Inventario_P3.push(otherSprite)
+    }
+})
 function Zane_se_detiene_en_la_derecha () {
     Kord.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -2314,6 +2341,10 @@ controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.P
 function Eli_2 () {
     sprites.destroy(Eli_Shane)
 }
+function Inventario3 () {
+    Inventario_P3 = []
+    Seleccion3 = 0
+}
 function Tdi () {
     Trixie.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -2401,14 +2432,28 @@ function Tdi () {
 controller.player4.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
     PCI()
 })
+sprites.onOverlap(SpriteKind.Player2, SpriteKind.Babosa, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_p2) {
+        Inventario_p2.push(otherSprite)
+    }
+})
+function Inventario2 () {
+    Inventario_p2 = []
+    Seleccion2 = 0
+}
 function zane () {
     Kord = sprites.create(assets.image`Kord Zane`, SpriteKind.Player3)
     info.player3.setScore(0)
     info.player3.setLife(7)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Kord)
 }
+function Inventario1 () {
+    inventario_P1 = []
+    Seleccion_1 = 0
+}
 function Pronto3 () {
-	
+    sprites.destroy(Pronto)
 }
 function CEABT () {
 	
@@ -2432,7 +2477,7 @@ function Zane_camina_hacia_arriba () {
     )
 }
 function PCD () {
-    Pronto.setVelocity(20, 0)
+    Pronto.setVelocity(30, 0)
     animation.runImageAnimation(
     Pronto,
     [img`
@@ -2540,6 +2585,9 @@ function PCD () {
     true
     )
 }
+controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    game.showLongText(inventario_P1, DialogLayout.Left)
+})
 function TCI () {
     Trixie.setVelocity(-50, 0)
     animation.runImageAnimation(
@@ -2630,6 +2678,30 @@ controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.R
 function CEABE () {
 	
 }
+function Elemental_de_agua_Buena () {
+    Elemental_de_agua = sprites.create(img`
+        . . . . f f f . . . . 
+        . f f . f 9 f . f f . 
+        . f d f 9 9 9 f d f . 
+        . f 6 d 6 9 6 d 6 f . 
+        f 9 6 6 6 6 6 6 6 9 f 
+        . f 9 6 6 1 6 6 9 f . 
+        f 6 1 f 9 9 9 f 1 6 f 
+        . f 9 9 f f f 9 9 f . 
+        . . f 9 9 9 9 9 f . . 
+        . f 6 6 9 9 9 6 6 f . 
+        . f 6 9 6 9 6 9 6 f . 
+        . . f 6 9 6 9 6 f . . 
+        . f 6 6 9 9 9 6 6 f . 
+        . f f f f f f f f f . 
+        `, SpriteKind.Elemental)
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Babosa, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (inventario_P1) {
+        inventario_P1.push(otherSprite)
+    }
+})
 controller.player1.onEvent(ControllerEvent.Connected, function () {
     Eli()
 })
@@ -2648,14 +2720,113 @@ controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pr
 controller.player1.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
     ECAB()
 })
+let Elemental_de_agua: Sprite = null
+let Seleccion_1 = 0
+let inventario_P1: Sprite[] = []
+let Seleccion2 = 0
+let Seleccion3 = 0
+let Seleccion4 = 0
+let Inventario_p4: Sprite[] = []
 let Eli_Shane: Sprite = null
+let Inventario_p2: Sprite[] = []
 let Kord: Sprite = null
 let Pronto: Sprite = null
+let Inventario_P3: Sprite[] = []
 let Trixie: Sprite = null
 tiles.setCurrentTilemap(tilemap`level1`)
+Inventario1()
+Inventario2()
+Inventario3()
+Inventario4()
+Elemental_de_agua_Buena()
 game.onUpdateInterval(500, function () {
     CEABE()
     CEABT()
     CEABK()
     CEABP()
+})
+game.onUpdateInterval(500, function () {
+    if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_agua) > 2) {
+        Elemental_de_agua.follow(Eli_Shane, -5)
+    } else if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_agua) < 0) {
+        Elemental_de_agua.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_agua.vy < 0) {
+        	
+        } else if (Elemental_de_agua.vy > 0) {
+        	
+        } else if (Elemental_de_agua.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx > 0) {
+        	
+        }
+    }
 })
