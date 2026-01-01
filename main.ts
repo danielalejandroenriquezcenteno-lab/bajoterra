@@ -3,34 +3,539 @@ namespace SpriteKind {
     export const Player3 = SpriteKind.create()
     export const Player4 = SpriteKind.create()
     export const Babosa = SpriteKind.create()
-    export const Elemental = SpriteKind.create()
+    export const Elementalagua = SpriteKind.create()
+    export const Elementalhielo = SpriteKind.create()
+    export const ElementalTierra = SpriteKind.create()
+    export const Elemental_De_Metal = SpriteKind.create()
+    export const Elemental_planta = SpriteKind.create()
 }
 controller.player4.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
-    PCA()
-})
-function TDA () {
-    Trixie.setVelocity(0, 0)
+    Pronto.setVelocity(0, -30)
     animation.runImageAnimation(
-    Trixie,
-    assets.animation`Trixie caminando ariba detenida`,
-    200,
+    Pronto,
+    [img`
+        ....fffffffffffffffff...
+        ...f44444444444444444f..
+        ..f4444444444444444444f.
+        ..f4444444444444444444f.
+        ..f2444444444444444442f.
+        ..f2444444444444444442f.
+        ..f4444444444444444444f.
+        ..fccc4444444444444cccf.
+        ..fbbcccccc444ccccccbbf.
+        ..fbbbbbbbcccccbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fffffffffffffffffffff.
+        ...f11f9f1111111f9f11f..
+        ...f99f11f99999f11f99f..
+        ...fccf99ff111ff99fccf..
+        ...fffffffffffffffffff..
+        ......f777766f7766f.....
+        ......f777766f7766f.....
+        ......fffffffffffff.....
+        `,img`
+        ....fffffffffffffffff...
+        ...f44444444444444444f..
+        ..f4444444444444444444f.
+        ..f4444444444444444444f.
+        ..f2444444444444444442f.
+        ..f2444444444444444442f.
+        ..f4444444444444444444f.
+        ..fccc4444444444444cccf.
+        ..fbbcccccc444ccccccbbf.
+        ..fbbbbbbbcccccbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fffffffffffffffffffff.
+        ...f99f9f1111111f9f11f..
+        ...fccf11f99999f11f99f..
+        ...ffff99ff111ff99fccf..
+        ......ffffffffffffffff..
+        ......f667777f6677f.....
+        ......f667777f6677f.....
+        ......fffffffffffff.....
+        `,img`
+        ....fffffffffffffffff...
+        ...f44444444444444444f..
+        ..f4444444444444444444f.
+        ..f4444444444444444444f.
+        ..f2444444444444444442f.
+        ..f2444444444444444442f.
+        ..f4444444444444444444f.
+        ..fccc4444444444444cccf.
+        ..fbbcccccc444ccccccbbf.
+        ..fbbbbbbbcccccbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fffffffffffffffffffff.
+        ...f11f9f1111111f9f11f..
+        ...f99f11f99999f11f99f..
+        ...fccf99ff111ff99fccf..
+        ...fffffffffffffffffff..
+        ......f777766f7766f.....
+        ......f777766f7766f.....
+        ......fffffffffffff.....
+        `,img`
+        ....fffffffffffffffff...
+        ...f44444444444444444f..
+        ..f4444444444444444444f.
+        ..f4444444444444444444f.
+        ..f2444444444444444442f.
+        ..f2444444444444444442f.
+        ..f4444444444444444444f.
+        ..fccc4444444444444cccf.
+        ..fbbcccccc444ccccccbbf.
+        ..fbbbbbbbcccccbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fffffffffffffffffffff.
+        ...f11f9f1111111f9f99f..
+        ...f99f11f99999f11fccf..
+        ...fccf99ff111ff99ffff..
+        ...ffffffffffffffff.....
+        ......f777766f7766f.....
+        ......f777766f7766f.....
+        ......fffffffffffff.....
+        `],
+    500,
     true
     )
-}
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Elementalagua, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (inventario_P1) {
+        inventario_P1.push(otherSprite)
+    }
+})
 controller.player4.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Released, function () {
-    PDA()
+    Pronto.setVelocity(0, 0)
+    animation.runImageAnimation(
+    Pronto,
+    [img`
+        ....fffffffffffffffff...
+        ...f44444444444444444f..
+        ..f4444444444444444444f.
+        ..f4444444444444444444f.
+        ..f2444444444444444442f.
+        ..f2444444444444444442f.
+        ..f4444444444444444444f.
+        ..fccc4444444444444cccf.
+        ..fbbcccccc444ccccccbbf.
+        ..fbbbbbbbcccccbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fbbbbbbbbbbbbbbbbbbbf.
+        ..fffffffffffffffffffff.
+        ...f11f9f1111111f9f11f..
+        ...f99f11f99999f11f99f..
+        ...fccf99ff111ff99fccf..
+        ...fffffffffffffffffff..
+        ......f777766f7766f.....
+        ......f777766f7766f.....
+        ......fffffffffffff.....
+        `],
+    500,
+    true
+    )
 })
+function Elemental_de_hielo () {
+    Elemental_de_hielo2 = sprites.create(img`
+        . . f f . . . . . f f . . 
+        . f 6 6 f . . . f 6 6 f . 
+        f 6 6 f . . . . . f 6 6 f 
+        f 6 6 6 f . . . f 6 6 6 f 
+        . f 6 6 6 f f f 6 6 6 f . 
+        f 9 f 6 6 6 6 6 6 6 f 9 f 
+        . f f 1 6 6 d 6 6 1 f f . 
+        . . f 1 1 1 1 1 1 1 f . . 
+        . . f 1 9 1 9 1 9 1 f . . 
+        . . f 9 9 f f f 9 9 f . . 
+        . . . f 9 9 9 9 9 f . . . 
+        . . f 1 1 9 9 9 1 1 f . . 
+        . . f 1 1 9 1 9 1 1 f . . 
+        . . . f 1 9 1 9 1 f . . . 
+        . . f 1 1 9 9 9 1 1 f . . 
+        . . f f f f f f f f f . . 
+        `, SpriteKind.Elementalhielo)
+    Elemental_de_hielo2.setPosition(30, 250)
+}
 controller.player4.onEvent(ControllerEvent.Connected, function () {
-    pronto()
+    Pronto = sprites.create(img`
+        ...fffffffffffffffffff.
+        ..f444455555555555555f.
+        .f4444455fffffffffff5f.
+        .f42244ffbbbbbbbbbbbff.
+        .f42244fbbdddddddddddf.
+        .f4444ffbbdddddddddddf.
+        .fffffbbbddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddffffdddffffdf.
+        .fbbbbbdd11ffdddff11df.
+        .fbbbbbdd11ffdddff11df.
+        .fbbbbbdddddd333dddddf.
+        .fbbbbbdddddd333dddddf.
+        .fbbbbbddddddddddddddf.
+        ffffffffffffffffffffff.
+        f1111fccceeeeeeccf11f..
+        f9999f9cc11ee11c9f99f..
+        fccccf1cc999999c1fccf..
+        fffffffffffffffffffff..
+        .....f667777f6677f.....
+        .....f667777f6677f.....
+        .....fffffffffffff.....
+        `, SpriteKind.Player4)
+    info.player4.setLife(7)
+    info.player4.setScore(0)
+    splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, Pronto)
 })
+function CETBP () {
+    if (spriteutils.distanceBetween(Pronto, Elemental_de_tierra2) < 5) {
+        Elemental_de_tierra2.follow(Pronto, -5)
+        Elemental_de_tierra2.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Pronto, Elemental_de_tierra2) > 0) {
+        Elemental_de_tierra2.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_tierra2.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d b c b d d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d d b c b d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d b c b d d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d b c b d d d f . . 
+                . . f f f f f f f f f . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f f 1 d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d 1 f f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
 controller.player3.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     game.showLongText(Inventario_P3, DialogLayout.Left)
 })
 controller.player4.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Released, function () {
-    PDI()
-})
-function PCI () {
-    Pronto.setVelocity(-30, 0)
+    Pronto.setVelocity(0, 0)
     animation.runImageAnimation(
     Pronto,
     [img`
@@ -70,33 +575,8 @@ function PCI () {
         .fddddddddddddddbbbbbf.
         .fddddddddddddddbbbbbf.
         .fdffffdddffffddbbbbbf.
-        .fd11ffdddff11ddbbbbbf.
-        .fd11ffdddff11ddbbbbbf.
-        .fddddd333ddddddbbbbbf.
-        .fddddd333ddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        ffffffffffffffffffffff.
-        f1111fcceeeeeecccf11f..
-        f9999f9c11ee11cc9f99f..
-        fccccf1c999999cc1fccf..
-        fffffffffffffffffffff..
-        .....f6677f667777f.....
-        .....f6677f667777f.....
-        .....fffffffffffff.....
-        `,img`
-        .fffffffffffffffffff...
-        .f555555555555554444f..
-        .f5fffffffffff5544444f.
-        .ffbbbbbbbbbbbff44224f.
-        .fdddddddddddbbf44224f.
-        .fdddddddddddbbff4444f.
-        .fddddddddddddbbbfffff.
-        .fddddddddddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .fdffffdddffffddbbbbbf.
-        .fd11ffdddff11ddbbbbbf.
-        .fd11ffdddff11ddbbbbbf.
+        .fdbbbbdddbbbbddbbbbbf.
+        .fdbbbbdddbbbbddbbbbbf.
         .fddddd333ddddddbbbbbf.
         .fddddd333ddddddbbbbbf.
         .fddddddddddddddbbbbbf.
@@ -125,19 +605,19 @@ function PCI () {
         .fddddd333ddddddbbbbbf.
         .fddddd333ddddddbbbbbf.
         .fddddddddddddddbbbbbf.
-        ffffffffffffffffffffff.
-        f1111fcceeeeeecccf11f..
-        f9999f9c11ee11cc9f99f..
-        fccccf1c999999cc1fccf..
-        fffffffffffffffffffff..
-        .....f6677f667777f.....
-        .....f6677f667777f.....
+        .ffffffffffffffffffffff
+        ..f11fcceeeeeecccf1111f
+        ..f99f9c11ee11cc9f9999f
+        ..fccf1c999999cc1fccccf
+        ..fffffffffffffffffffff
+        .....f7766f777766f.....
+        .....f7766f777766f.....
         .....fffffffffffff.....
         `],
     500,
     true
     )
-}
+})
 function Zane_se_detiene_abajo () {
     Kord.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -243,6 +723,12 @@ function Zane_se_detiene_abajo () {
 controller.player2.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     game.showLongText(Inventario_p2, DialogLayout.Right)
 })
+function CEAB () {
+    CEABE()
+    CEABT()
+    CEABK()
+    CEABP()
+}
 function TDD () {
     Trixie.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -420,45 +906,364 @@ controller.player4.onEvent(ControllerEvent.Disconnected, function () {
 controller.player4.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
     game.showLongText(Inventario_p4, DialogLayout.Right)
 })
+function CEHB () {
+    CEHBE()
+    CEHBT()
+    CEHBK()
+    CEHBP()
+}
 controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Released, function () {
     EDI()
 })
 controller.player3.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Released, function () {
     Zane_se_detiene_arriba()
 })
-function PDA () {
-    Pronto.setVelocity(0, 0)
-    animation.runImageAnimation(
-    Pronto,
-    [img`
-        ....fffffffffffffffff...
-        ...f44444444444444444f..
-        ..f4444444444444444444f.
-        ..f4444444444444444444f.
-        ..f2444444444444444442f.
-        ..f2444444444444444442f.
-        ..f4444444444444444444f.
-        ..fccc4444444444444cccf.
-        ..fbbcccccc444ccccccbbf.
-        ..fbbbbbbbcccccbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fffffffffffffffffffff.
-        ...f11f9f1111111f9f11f..
-        ...f99f11f99999f11f99f..
-        ...fccf99ff111ff99fccf..
-        ...fffffffffffffffffff..
-        ......f777766f7766f.....
-        ......f777766f7766f.....
-        ......fffffffffffff.....
-        `],
-    500,
-    true
-    )
+sprites.onOverlap(SpriteKind.Player3, SpriteKind.Elementalhielo, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_P3) {
+        Inventario_P3.push(otherSprite)
+    }
+})
+function CEHBE () {
+    if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_hielo2) < 2) {
+        Elemental_de_hielo2.follow(Eli_Shane, -5)
+        Elemental_de_hielo2.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_hielo2) > 0) {
+        Elemental_de_hielo2.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_hielo2.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 9 6 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 1 9 6 9 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 9 6 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 9 6 9 1 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
+function ElementalMetal2 () {
+    ElementalMetal = sprites.create(img`
+        . f . . . . . . . f . 
+        f d f . . f . . f d f 
+        f d d f f b f f d d f 
+        f d d d f b f d d d f 
+        . f d b d b d b d f . 
+        . f d b d b d b d f . 
+        . f d d d b d d d f . 
+        . f 1 f d d d f 1 f . 
+        . f d b f f f b d f . 
+        . . f d b b b d f . . 
+        . f d d b b b d d f . 
+        . f d d b b b d d f . 
+        . . f d b b b d f . . 
+        . f d b b b b b d f . 
+        . f f f f f f f f f . 
+        `, SpriteKind.Elemental_De_Metal)
+    ElementalMetal.setPosition(10, 10)
 }
 function Zane_camina_hacia_abajo () {
     Kord.setVelocity(0, 80)
@@ -565,126 +1370,415 @@ function Zane_camina_hacia_abajo () {
 controller.player3.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Released, function () {
     Zane_se_detiene_abajo()
 })
+sprites.onOverlap(SpriteKind.Player2, SpriteKind.Elementalhielo, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_p2) {
+        Inventario_p2.push(otherSprite)
+    }
+})
 controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
     ECA()
 })
+function CEMBT () {
+    if (spriteutils.distanceBetween(Trixie, ElementalMetal) < 2) {
+        ElementalMetal.follow(Trixie, -5)
+        ElementalMetal.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Trixie, ElementalMetal) > 0) {
+        ElementalMetal.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (ElementalMetal.vy < 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d c b c d d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d d c b c d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d c b c d d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d c b c d d d f . 
+                . f f f f f f f f f . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vy > 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vx < 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f f 1 d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vx > 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d 1 f f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
 controller.player1.onEvent(ControllerEvent.Disconnected, function () {
     Eli_2()
 })
 controller.player1.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Released, function () {
     EDA()
 })
-function PCA () {
-    Pronto.setVelocity(0, -30)
+sprites.onOverlap(SpriteKind.Player3, SpriteKind.Elementalagua, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_P3) {
+        Inventario_P3.push(otherSprite)
+    }
+})
+controller.player4.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Released, function () {
+    Pronto.setVelocity(0, 0)
     animation.runImageAnimation(
     Pronto,
     [img`
-        ....fffffffffffffffff...
-        ...f44444444444444444f..
-        ..f4444444444444444444f.
-        ..f4444444444444444444f.
-        ..f2444444444444444442f.
-        ..f2444444444444444442f.
-        ..f4444444444444444444f.
-        ..fccc4444444444444cccf.
-        ..fbbcccccc444ccccccbbf.
-        ..fbbbbbbbcccccbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        .ffffffffffffffffffffff.
-        .f1111f9f1111111f9f11f..
-        .f9999f11f99999f11f99f..
-        .fccccf99ff111ff99fccf..
-        .fffffffffffffffffffff..
-        ......f667777f6677f.....
-        ......f667777f6677f.....
-        ......fffffffffffff.....
+        ...fffffffffffffffffff.
+        ..f445555555555555444f.
+        .f44455fffffffff55444f.
+        .f244ffbbbbbbbbbff442f.
+        .f244fbbdddddddbbf442f.
+        .f44ffbbdddddddbbff44f.
+        .fffbbbdddddddddbbbfff.
+        .fbbbdddddddddddddbbbf.
+        .fbbdddddddddddddddbbf.
+        .fbbdddddddddddddddbbf.
+        .fbbddffffdddffffddbbf.
+        .fbbdd11ffdddff11ddbbf.
+        .fbbdd11ffdddff11ddbbf.
+        .fbbdddddd333ddddddbbf.
+        .fbbdddddd333ddddddbbf.
+        .fbbdddddddddddddddbbf.
+        .fffffffffffffffffffff.
+        ..f11fcceeeeeecccf11f..
+        ..f99f9c11ee11cc9f99f..
+        ..fccf1c999999cc1fccf..
+        ..fffffffffffffffffff..
+        .....f6677f667777f.....
+        .....f6677f667777f.....
+        .....fffffffffffff.....
         `,img`
-        ....fffffffffffffffff...
-        ...f44444444444444444f..
-        ..f4444444444444444444f.
-        ..f4444444444444444444f.
-        ..f2444444444444444442f.
-        ..f2444444444444444442f.
-        ..f4444444444444444444f.
-        ..fccc4444444444444cccf.
-        ..fbbcccccc444ccccccbbf.
-        ..fbbbbbbbcccccbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..ffffffffffffffffffffff
-        ...f11f9f1111111f9f1111f
-        ...f99f11f99999f11f9999f
-        ...fccf99ff111ff99fccccf
-        ...fffffffffffffffffffff
-        ......f777766f7766f.....
-        ......f777766f7766f.....
-        ......fffffffffffff.....
+        ...fffffffffffffffffff.
+        ..f445555555555555444f.
+        .f44455fffffffff55444f.
+        .f244ffbbbbbbbbbff442f.
+        .f244fbbdddddddbbf442f.
+        .f44ffbbdddddddbbff44f.
+        .fffbbbdddddddddbbbfff.
+        .fbbbdddddddddddddbbbf.
+        .fbbdddddddddddddddbbf.
+        .fbbdddddddddddddddbbf.
+        .fbbddffffdddffffddbbf.
+        .fbbddbbbbdddbbbbddbbf.
+        .fbbddbbbbdddbbbbddbbf.
+        .fbbdddddd333ddddddbbf.
+        .fbbdddddd333ddddddbbf.
+        .fbbdddddddddddddddbbf.
+        .fffffffffffffffffffff.
+        ..f11fcceeeeeecccf11f..
+        ..f99f9c11ee11cc9f99f..
+        ..fccf1c999999cc1fccf..
+        ..fffffffffffffffffff..
+        .....f6677f667777f.....
+        .....f6677f667777f.....
+        .....fffffffffffff.....
         `,img`
-        ....fffffffffffffffff...
-        ...f44444444444444444f..
-        ..f4444444444444444444f.
-        ..f4444444444444444444f.
-        ..f2444444444444444442f.
-        ..f2444444444444444442f.
-        ..f4444444444444444444f.
-        ..fccc4444444444444cccf.
-        ..fbbcccccc444ccccccbbf.
-        ..fbbbbbbbcccccbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        .ffffffffffffffffffffff.
-        .f1111f9f1111111f9f11f..
-        .f9999f11f99999f11f99f..
-        .fccccf99ff111ff99fccf..
-        .fffffffffffffffffffff..
-        ......f667777f6677f.....
-        ......f667777f6677f.....
-        ......fffffffffffff.....
-        `,img`
-        ....fffffffffffffffff...
-        ...f44444444444444444f..
-        ..f4444444444444444444f.
-        ..f4444444444444444444f.
-        ..f2444444444444444442f.
-        ..f2444444444444444442f.
-        ..f4444444444444444444f.
-        ..fccc4444444444444cccf.
-        ..fbbcccccc444ccccccbbf.
-        ..fbbbbbbbcccccbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..fbbbbbbbbbbbbbbbbbbbf.
-        ..ffffffffffffffffffffff
-        ...f11f9f1111111f9f1111f
-        ...f99f11f99999f11f9999f
-        ...fccf99ff111ff99fccccf
-        ...fffffffffffffffffffff
-        ......f777766f7766f.....
-        ......f777766f7766f.....
-        ......fffffffffffff.....
+        ...fffffffffffffffffff.
+        ..f445555555555555444f.
+        .f44455fffffffff55444f.
+        .f244ffbbbbbbbbbff442f.
+        .f244fbbdddddddbbf442f.
+        .f44ffbbdddddddbbff44f.
+        .fffbbbdddddddddbbbfff.
+        .fbbbdddddddddddddbbbf.
+        .fbbdddddddddddddddbbf.
+        .fbbdddddddddddddddbbf.
+        .fbbddffffdddffffddbbf.
+        .fbbdd11ffdddff11ddbbf.
+        .fbbdd11ffdddff11ddbbf.
+        .fbbdddddd333ddddddbbf.
+        .fbbdddddd333ddddddbbf.
+        .fbbdddddddddddddddbbf.
+        .fffffffffffffffffffff.
+        ..f11fcceeeeeecccf11f..
+        ..f99f9c11ee11cc9f99f..
+        ..fccf1c999999cc1fccf..
+        ..fffffffffffffffffff..
+        .....f6677f667777f.....
+        .....f6677f667777f.....
+        .....fffffffffffff.....
         `],
     500,
     true
     )
-}
-controller.player4.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Released, function () {
-    PDAB()
 })
 function Zane_camina_se_detiene_en_la_izquierda () {
     Kord.setVelocity(0, 0)
@@ -789,7 +1883,32 @@ function Zane_camina_se_detiene_en_la_izquierda () {
     )
 }
 function Eli () {
-    Eli_Shane = sprites.create(assets.image`DrBlakk`, SpriteKind.Player)
+    Eli_Shane = sprites.create(img`
+        ...fffffffffffffffffff.
+        ..fcccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        fccccfffccccccccccccccf
+        fccccfefccfcccccccccccf
+        fcccffedffdfccccccccccf
+        fcccffedfdddfcccccccccf
+        ffccffeddddddffffffffff
+        .fcccfeddddddddddddddf.
+        .fccffeddffffdddffffdf.
+        .fccfeedd11ffdddff11df.
+        .fcffeedd11ffdddff11df.
+        .fffeeeddddddddddddddf.
+        .ffeeeeddddddfffdddddf.
+        .feeeeeddddddddddddddf.
+        ffffffffffffffffffffff.
+        fddeefcccccbb66ccfdef..
+        fccccf11ccb6ccc11fccf..
+        fdcdcf44b6ccccc44fdcf..
+        fffffffffffffffffffff..
+        .....fbbbbccfbbccf.....
+        .....fbbbbccfbbccf.....
+        .....fffffffffffff.....
+        `, SpriteKind.Player)
     info.player1.setScore(0)
     info.player1.setLife(5)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Eli_Shane)
@@ -878,193 +1997,49 @@ function ECA () {
     true
     )
 }
-function PDI () {
-    Pronto.setVelocity(0, 0)
-    animation.runImageAnimation(
-    Pronto,
-    [img`
-        .fffffffffffffffffff...
-        .f555555555555554444f..
-        .f5fffffffffff5544444f.
-        .ffbbbbbbbbbbbff44224f.
-        .fdddddddddddbbf44224f.
-        .fdddddddddddbbff4444f.
-        .fddddddddddddbbbfffff.
-        .fddddddddddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .fdffffdddffffddbbbbbf.
-        .fd11ffdddff11ddbbbbbf.
-        .fd11ffdddff11ddbbbbbf.
-        .fddddd333ddddddbbbbbf.
-        .fddddd333ddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .ffffffffffffffffffffff
-        ..f11fcceeeeeecccf1111f
-        ..f99f9c11ee11cc9f9999f
-        ..fccf1c999999cc1fccccf
-        ..fffffffffffffffffffff
-        .....f7766f777766f.....
-        .....f7766f777766f.....
-        .....fffffffffffff.....
-        `,img`
-        .fffffffffffffffffff...
-        .f555555555555554444f..
-        .f5fffffffffff5544444f.
-        .ffbbbbbbbbbbbff44224f.
-        .fdddddddddddbbf44224f.
-        .fdddddddddddbbff4444f.
-        .fddddddddddddbbbfffff.
-        .fddddddddddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .fdffffdddffffddbbbbbf.
-        .fdbbbbdddbbbbddbbbbbf.
-        .fdbbbbdddbbbbddbbbbbf.
-        .fddddd333ddddddbbbbbf.
-        .fddddd333ddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .ffffffffffffffffffffff
-        ..f11fcceeeeeecccf1111f
-        ..f99f9c11ee11cc9f9999f
-        ..fccf1c999999cc1fccccf
-        ..fffffffffffffffffffff
-        .....f7766f777766f.....
-        .....f7766f777766f.....
-        .....fffffffffffff.....
-        `,img`
-        .fffffffffffffffffff...
-        .f555555555555554444f..
-        .f5fffffffffff5544444f.
-        .ffbbbbbbbbbbbff44224f.
-        .fdddddddddddbbf44224f.
-        .fdddddddddddbbff4444f.
-        .fddddddddddddbbbfffff.
-        .fddddddddddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .fdffffdddffffddbbbbbf.
-        .fd11ffdddff11ddbbbbbf.
-        .fd11ffdddff11ddbbbbbf.
-        .fddddd333ddddddbbbbbf.
-        .fddddd333ddddddbbbbbf.
-        .fddddddddddddddbbbbbf.
-        .ffffffffffffffffffffff
-        ..f11fcceeeeeecccf1111f
-        ..f99f9c11ee11cc9f9999f
-        ..fccf1c999999cc1fccccf
-        ..fffffffffffffffffffff
-        .....f7766f777766f.....
-        .....f7766f777766f.....
-        .....fffffffffffff.....
-        `],
-    500,
-    true
-    )
-}
-function PDD () {
-    Pronto.setVelocity(0, 0)
-    animation.runImageAnimation(
-    Pronto,
-    [img`
-        ...fffffffffffffffffff.
-        ..f444455555555555555f.
-        .f4444455fffffffffff5f.
-        .f42244ffbbbbbbbbbbbff.
-        .f42244fbbdddddddddddf.
-        .f4444ffbbdddddddddddf.
-        .fffffbbbddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddffffdddffffdf.
-        .fbbbbbdd11ffdddff11df.
-        .fbbbbbdd11ffdddff11df.
-        .fbbbbbdddddd333dddddf.
-        .fbbbbbdddddd333dddddf.
-        .fbbbbbddddddddddddddf.
-        ffffffffffffffffffffff.
-        f1111fccceeeeeeccf11f..
-        f9999f9cc11ee11c9f99f..
-        fccccf1cc999999c1fccf..
-        fffffffffffffffffffff..
-        .....f667777f6677f.....
-        .....f667777f6677f.....
-        .....fffffffffffff.....
-        `,img`
-        ...fffffffffffffffffff.
-        ..f444455555555555555f.
-        .f4444455fffffffffff5f.
-        .f42244ffbbbbbbbbbbbff.
-        .f42244fbbdddddddddddf.
-        .f4444ffbbdddddddddddf.
-        .fffffbbbddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddffffdddffffdf.
-        .fbbbbbddbbbbdddbbbbdf.
-        .fbbbbbddbbbbdddbbbbdf.
-        .fbbbbbdddddd333dddddf.
-        .fbbbbbdddddd333dddddf.
-        .fbbbbbddddddddddddddf.
-        ffffffffffffffffffffff.
-        f1111fccceeeeeeccf11f..
-        f9999f9cc11ee11c9f99f..
-        fccccf1cc999999c1fccf..
-        fffffffffffffffffffff..
-        .....f667777f6677f.....
-        .....f667777f6677f.....
-        .....fffffffffffff.....
-        `,img`
-        ...fffffffffffffffffff.
-        ..f444455555555555555f.
-        .f4444455fffffffffff5f.
-        .f42244ffbbbbbbbbbbbff.
-        .f42244fbbdddddddddddf.
-        .f4444ffbbdddddddddddf.
-        .fffffbbbddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddddddddddddddf.
-        .fbbbbbddffffdddffffdf.
-        .fbbbbbdd11ffdddff11df.
-        .fbbbbbdd11ffdddff11df.
-        .fbbbbbdddddd333dddddf.
-        .fbbbbbdddddd333dddddf.
-        .fbbbbbddddddddddddddf.
-        ffffffffffffffffffffff.
-        f1111fccceeeeeeccf11f..
-        f9999f9cc11ee11c9f99f..
-        fccccf1cc999999c1fccf..
-        fffffffffffffffffffff..
-        .....f667777f6677f.....
-        .....f667777f6677f.....
-        .....fffffffffffff.....
-        `],
-    500,
-    true
-    )
-}
 controller.player2.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
     TCA()
 })
 function Trxie () {
-    Trixie = sprites.create(assets.image`Trixie`, SpriteKind.Player2)
+    Trixie = sprites.create(img`
+        .fffffffffffffffffffffffffffff.
+        f44e3feeee444444444444444f3e44f
+        f44e3feeee444444444444444f3e44f
+        f44e3feeee444444444444444f3e44f
+        f44e3feeee444444444444444f3e44f
+        f44e3feeee444444444ff4444f3e44f
+        f44e3feeee44fff444fddf444f3e44f
+        .f4e3feeee44fddf44fdddf44f3e4f.
+        ..ffffeeeeffddddf4fddddf4ffff..
+        .....feeefdddddddffddddf4f.....
+        .....feeefddd4444ddd4444ff.....
+        .....ffefbddd1177ddd7711df.....
+        .....fbfbbddd117fdddf711df.....
+        .....fbbbbdddddddddddddddf.....
+        .....fbbbbdddddddfffdddddf.....
+        .....fbbbbdddddddddddddddf.....
+        .....fffffffffffffffffffff.....
+        .....f776f66777ccc7c4f7df......
+        .....fd76f667777777ccf77f......
+        .....fffffccbbbbbbbbbf7df......
+        .........ffffffffffffffff......
+        .........fccbbbbfccbbf.........
+        .........fccbbbbfccbbf.........
+        `, SpriteKind.Player2)
     info.player2.setScore(0)
     info.player2.setLife(5)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Trixie)
+}
+function CEMB () {
+    CEMBE()
+    CEMBT()
+    CEMBK()
+    CEMBP()
 }
 controller.player3.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Released, function () {
     Zane_se_detiene_en_la_derecha()
 })
 controller.player4.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
-    PCAB()
-})
-controller.player2.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Released, function () {
-    Tdi()
-})
-function PCAB () {
     Pronto.setVelocity(0, 30)
     animation.runImageAnimation(
     Pronto,
@@ -1172,7 +2147,40 @@ function PCAB () {
     500,
     true
     )
+})
+function ElementalPlanta () {
+    Elemental_planta = sprites.create(img`
+        . . . . . f . . . . . 
+        . . . . f 7 f . . . . 
+        . . . . f 7 f . . . . 
+        . . . . f 3 f . . . . 
+        . . . f 3 5 3 f . . . 
+        . . . . f 3 f . . . . 
+        . f f . f 7 f . f f . 
+        . f 3 f 3 3 3 f 3 f . 
+        . f 3 3 3 3 3 3 3 f . 
+        f 3 3 3 3 3 3 3 3 3 f 
+        . f 3 3 3 3 3 3 3 f . 
+        . f 1 f 9 3 9 f 1 f . 
+        . f 9 9 f f f 9 9 f . 
+        . . f 9 9 9 9 9 f . . 
+        . f 7 7 9 9 9 7 7 f . 
+        . f 7 9 1 1 1 9 7 f . 
+        . . f 7 9 1 9 7 f . . 
+        . f 7 7 9 9 9 7 7 f . 
+        . f f f f f f f f f . 
+        `, SpriteKind.Elemental_planta)
+    Elemental_planta.setPosition(150, 10)
 }
+sprites.onOverlap(SpriteKind.Player2, SpriteKind.ElementalTierra, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_p2) {
+        Inventario_p2.push(otherSprite)
+    }
+})
+controller.player2.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Released, function () {
+    Tdi()
+})
 function Zane_camina_a_la_izquierda () {
     Kord.setVelocity(-80, 0)
     animation.runImageAnimation(
@@ -1274,6 +2282,333 @@ function Zane_camina_a_la_izquierda () {
     100,
     true
     )
+}
+sprites.onOverlap(SpriteKind.Player4, SpriteKind.ElementalTierra, function (sprite, otherSprite) {
+    sprites.destroy(Elemental_de_tierra2)
+    if (Inventario_p4) {
+        Inventario_p4.push(Elemental_de_tierra2)
+    }
+})
+function CETBE () {
+    if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_tierra2) < 2) {
+        Elemental_de_tierra2.follow(Eli_Shane, -5)
+        Elemental_de_tierra2.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_tierra2) > 0) {
+        Elemental_de_tierra2.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_tierra2.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d b c b d d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d d b c b d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d b c b d d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d b c b d d d f . . 
+                . . f f f f f f f f f . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f f 1 d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d 1 f f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
 }
 controller.player2.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Released, function () {
     Tdab()
@@ -1384,8 +2719,83 @@ function TCA () {
     Trixie.setVelocity(0, 50)
     animation.runImageAnimation(
     Trixie,
-    assets.animation`Trixie camina hacia adelante`,
-    200,
+    [img`
+        .fffffffffffffffffffffffffffff.
+        f44e3feeee444444444444444f3e44f
+        f44e3feeee444444444444444f3e44f
+        f44e3feeee444444444444444f3e44f
+        f44e3feeee444444444444444f3e44f
+        f44e3feeee444444444ff4444f3e44f
+        f44e3feeee44fff444fddf444f3e44f
+        .f4e3feeee44fddf44fdddf44f3e4f.
+        ..ffffeeeeffddddf4fddddf4ffff..
+        .....feeefdddddddffddddf4f.....
+        .....feeefddd4444ddd4444ff.....
+        .....ffefbddd1177ddd7711df.....
+        .....fbfbbddd117fdddf711df.....
+        .....fbbbbdddddddddddddddf.....
+        .....fbbbbdddddddfffdddddf.....
+        .....fbbbbdddddddddddddddf.....
+        .....fffffffffffffffffffff.....
+        .....f776f66777ccc7c4f7df......
+        .....fd76f667777777ccf77f......
+        .....fffffccbbbbbbbbbf7df......
+        .........ffffffffffffffff......
+        .........fccbbbbfccbbf.........
+        .........fccbbbbfccbbf.........
+        .........fffffffffffff.........
+        `,img`
+        .fffffffffffffffffffffffffffff.
+        f44e3fee444444444444444eef3e44f
+        f44e3fee444444444444444eef3e44f
+        f44e3fee444444444444444eef3e44f
+        f44e3fee444444444444444eef3e44f
+        f44e3fee444444444ff4444eef3e44f
+        f44e3fee44fff444fddf444eef3e44f
+        .f4e3fee44fddf44fdddf44eef3e4f.
+        ..ffffeeffddddf4fddddf4eeffff..
+        .....fefdddddddffddddf4fef.....
+        .....fefddd4444ddd4444ffef.....
+        .....ffbddd1177ddd7711dbff.....
+        .....fbbddd117fdddf711dbbf.....
+        .....fbbdddddddddddddddbbf.....
+        .....fbbdddddddfffdddddbbf.....
+        .....fbbdddddddddddddddbbf.....
+        .....fffffffffffffffffffff.....
+        .....fd7df6677ccc77c4f7df......
+        .....f776f667777777ccf77f......
+        .....fd76fccbbbbbbbbbf7df......
+        .....ffffffffffffffffffff......
+        .........fbbbbccfbbccf.........
+        .........fbbbbccfbbccf.........
+        .........fffffffffffff.........
+        `,img`
+        .fffffffffffffffffffffffffffff.
+        f44e3f444444444444444eeeef3e44f
+        f44e3f444444444444444eeeef3e44f
+        f44e3f444444444444444eeeef3e44f
+        f44e3f444444444444444eeeef3e44f
+        f44e3f4444ff444444444eeeef3e44f
+        f44e3f444fddf444fff44eeeef3e44f
+        .f4e3f44fdddf44fddf44eeeef3e4f.
+        ..ffff4fddddf4fddddffeeeeffff..
+        .....f4fddddffdddddddfeeef.....
+        .....ff4444ddd4444dddfeeef.....
+        .....fd1177ddd7711dddbfeff.....
+        .....fd117fdddf711dddbbfbf.....
+        .....fdddddddddddddddbbbbf.....
+        .....fdddddfffdddddddbbbbf.....
+        .....fdddddddddddddddbbbbf.....
+        .....fffffffffffffffffffff.....
+        ......f77f4c7ccc77766fd7df.....
+        ......fd7fcc777777766f677f.....
+        ......ffffbbbbbbbbbccf67df.....
+        .........fffffffffffffffff.....
+        .........fccbbfccbbbbf.........
+        .........fccbbfccbbbbf.........
+        .........fffffffffffff.........
+        `],
+    100,
     true
     )
 }
@@ -1511,7 +2921,49 @@ function TCD () {
     )
 }
 controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Released, function () {
-    TDA()
+    Trixie.setVelocity(0, 0)
+    animation.runImageAnimation(
+    Trixie,
+    [img`
+        .fffffffffffffffffffffffffffff.
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        .f4e3f4444444444444444444f3e4f.
+        ..ffff4444444444444444444ffff..
+        .....f4444444444444444444f.....
+        .....f4444444444444444444f.....
+        .....ff44444444444444444ff.....
+        .....fbfffffffffffffffffbf.....
+        .....fbbbbbbbbbbbbbbbbbbbf.....
+        .....fdddddddddddddddddddf.....
+        .....fdddddddddddddddddddf.....
+        .....fffffffffffffffffffff.....
+        .....fd7df66777777777f7df......
+        .....f776f66777777777f77f......
+        .....fd76f9cbbbbbbbbbf7df......
+        .....ffffffffffffffffffff......
+        .........fccbbbbfccbbf.........
+        .........fccbbbbfccbbf.........
+        `],
+    200,
+    true
+    )
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Elemental_De_Metal, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (inventario_P1) {
+        inventario_P1.push(otherSprite)
+    }
+})
+sprites.onOverlap(SpriteKind.Player3, SpriteKind.Elemental_De_Metal, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_P3) {
+        Inventario_P3.push(otherSprite)
+    }
 })
 function EDI () {
     Eli_Shane.setVelocity(0, 0)
@@ -1599,6 +3051,12 @@ function EDI () {
 }
 controller.player3.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
     Zane_camina_a_la_derecha()
+})
+sprites.onOverlap(SpriteKind.Player3, SpriteKind.ElementalTierra, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_P3) {
+        Inventario_P3.push(otherSprite)
+    }
 })
 function EDC () {
     Eli_Shane.setVelocity(0, 0)
@@ -1690,89 +3148,326 @@ sprites.onOverlap(SpriteKind.Player4, SpriteKind.Babosa, function (sprite, other
         Inventario_p4.push(otherSprite)
     }
 })
-function PDAB () {
-    Pronto.setVelocity(0, 0)
-    animation.runImageAnimation(
-    Pronto,
-    [img`
-        ...fffffffffffffffffff.
-        ..f445555555555555444f.
-        .f44455fffffffff55444f.
-        .f244ffbbbbbbbbbff442f.
-        .f244fbbdddddddbbf442f.
-        .f44ffbbdddddddbbff44f.
-        .fffbbbdddddddddbbbfff.
-        .fbbbdddddddddddddbbbf.
-        .fbbdddddddddddddddbbf.
-        .fbbdddddddddddddddbbf.
-        .fbbddffffdddffffddbbf.
-        .fbbdd11ffdddff11ddbbf.
-        .fbbdd11ffdddff11ddbbf.
-        .fbbdddddd333ddddddbbf.
-        .fbbdddddd333ddddddbbf.
-        .fbbdddddddddddddddbbf.
-        .fffffffffffffffffffff.
-        ..f11fcceeeeeecccf11f..
-        ..f99f9c11ee11cc9f99f..
-        ..fccf1c999999cc1fccf..
-        ..fffffffffffffffffff..
-        .....f6677f667777f.....
-        .....f6677f667777f.....
-        .....fffffffffffff.....
-        `,img`
-        ...fffffffffffffffffff.
-        ..f445555555555555444f.
-        .f44455fffffffff55444f.
-        .f244ffbbbbbbbbbff442f.
-        .f244fbbdddddddbbf442f.
-        .f44ffbbdddddddbbff44f.
-        .fffbbbdddddddddbbbfff.
-        .fbbbdddddddddddddbbbf.
-        .fbbdddddddddddddddbbf.
-        .fbbdddddddddddddddbbf.
-        .fbbddffffdddffffddbbf.
-        .fbbddbbbbdddbbbbddbbf.
-        .fbbddbbbbdddbbbbddbbf.
-        .fbbdddddd333ddddddbbf.
-        .fbbdddddd333ddddddbbf.
-        .fbbdddddddddddddddbbf.
-        .fffffffffffffffffffff.
-        ..f11fcceeeeeecccf11f..
-        ..f99f9c11ee11cc9f99f..
-        ..fccf1c999999cc1fccf..
-        ..fffffffffffffffffff..
-        .....f6677f667777f.....
-        .....f6677f667777f.....
-        .....fffffffffffff.....
-        `,img`
-        ...fffffffffffffffffff.
-        ..f445555555555555444f.
-        .f44455fffffffff55444f.
-        .f244ffbbbbbbbbbff442f.
-        .f244fbbdddddddbbf442f.
-        .f44ffbbdddddddbbff44f.
-        .fffbbbdddddddddbbbfff.
-        .fbbbdddddddddddddbbbf.
-        .fbbdddddddddddddddbbf.
-        .fbbdddddddddddddddbbf.
-        .fbbddffffdddffffddbbf.
-        .fbbdd11ffdddff11ddbbf.
-        .fbbdd11ffdddff11ddbbf.
-        .fbbdddddd333ddddddbbf.
-        .fbbdddddd333ddddddbbf.
-        .fbbdddddddddddddddbbf.
-        .fffffffffffffffffffff.
-        ..f11fcceeeeeecccf11f..
-        ..f99f9c11ee11cc9f99f..
-        ..fccf1c999999cc1fccf..
-        ..fffffffffffffffffff..
-        .....f6677f667777f.....
-        .....f6677f667777f.....
-        .....fffffffffffff.....
-        `],
-    500,
-    true
-    )
+function CEHBK () {
+    if (spriteutils.distanceBetween(Kord, Elemental_de_hielo2) < 2) {
+        Elemental_de_hielo2.follow(Kord, -5)
+        Elemental_de_hielo2.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Kord, Elemental_de_hielo2) > 0) {
+        Elemental_de_hielo2.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_hielo2.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 9 6 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 1 9 6 9 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 9 6 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 9 6 9 1 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
 }
 function Trixie2 () {
     sprites.destroy(Trixie)
@@ -1780,6 +3475,311 @@ function Trixie2 () {
 controller.player2.onButtonEvent(ControllerButton.Up, ControllerButtonEvent.Pressed, function () {
     Trixie_Arriba()
 })
+function CEMBE () {
+    if (spriteutils.distanceBetween(Eli_Shane, ElementalMetal) < 2) {
+        ElementalMetal.follow(Eli_Shane, -5)
+        ElementalMetal.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Eli_Shane, ElementalMetal) > 0) {
+        ElementalMetal.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (ElementalMetal.vy < 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d c b c d d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d d c b c d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d c b c d d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d c b c d d d f . 
+                . f f f f f f f f f . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vy > 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vx < 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f f 1 d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vx > 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d 1 f f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
 controller.player2.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
     TCD()
 })
@@ -1787,16 +3787,377 @@ controller.player3.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Re
     Zane_camina_se_detiene_en_la_izquierda()
 })
 controller.player4.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Released, function () {
-    PDD()
+    Pronto.setVelocity(0, 0)
+    animation.runImageAnimation(
+    Pronto,
+    [img`
+        ...fffffffffffffffffff.
+        ..f444455555555555555f.
+        .f4444455fffffffffff5f.
+        .f42244ffbbbbbbbbbbbff.
+        .f42244fbbdddddddddddf.
+        .f4444ffbbdddddddddddf.
+        .fffffbbbddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddffffdddffffdf.
+        .fbbbbbdd11ffdddff11df.
+        .fbbbbbdd11ffdddff11df.
+        .fbbbbbdddddd333dddddf.
+        .fbbbbbdddddd333dddddf.
+        .fbbbbbddddddddddddddf.
+        ffffffffffffffffffffff.
+        f1111fccceeeeeeccf11f..
+        f9999f9cc11ee11c9f99f..
+        fccccf1cc999999c1fccf..
+        fffffffffffffffffffff..
+        .....f667777f6677f.....
+        .....f667777f6677f.....
+        .....fffffffffffff.....
+        `,img`
+        ...fffffffffffffffffff.
+        ..f444455555555555555f.
+        .f4444455fffffffffff5f.
+        .f42244ffbbbbbbbbbbbff.
+        .f42244fbbdddddddddddf.
+        .f4444ffbbdddddddddddf.
+        .fffffbbbddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddffffdddffffdf.
+        .fbbbbbddbbbbdddbbbbdf.
+        .fbbbbbddbbbbdddbbbbdf.
+        .fbbbbbdddddd333dddddf.
+        .fbbbbbdddddd333dddddf.
+        .fbbbbbddddddddddddddf.
+        ffffffffffffffffffffff.
+        f1111fccceeeeeeccf11f..
+        f9999f9cc11ee11c9f99f..
+        fccccf1cc999999c1fccf..
+        fffffffffffffffffffff..
+        .....f667777f6677f.....
+        .....f667777f6677f.....
+        .....fffffffffffff.....
+        `,img`
+        ...fffffffffffffffffff.
+        ..f444455555555555555f.
+        .f4444455fffffffffff5f.
+        .f42244ffbbbbbbbbbbbff.
+        .f42244fbbdddddddddddf.
+        .f4444ffbbdddddddddddf.
+        .fffffbbbddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddddddddddddddf.
+        .fbbbbbddffffdddffffdf.
+        .fbbbbbdd11ffdddff11df.
+        .fbbbbbdd11ffdddff11df.
+        .fbbbbbdddddd333dddddf.
+        .fbbbbbdddddd333dddddf.
+        .fbbbbbddddddddddddddf.
+        ffffffffffffffffffffff.
+        f1111fccceeeeeeccf11f..
+        f9999f9cc11ee11c9f99f..
+        fccccf1cc999999c1fccf..
+        fffffffffffffffffffff..
+        .....f667777f6677f.....
+        .....f667777f6677f.....
+        .....fffffffffffff.....
+        `],
+    500,
+    true
+    )
 })
-function pronto () {
-    Pronto = sprites.create(assets.image`Pronto`, SpriteKind.Player4)
-    info.player4.setLife(7)
-    info.player4.setScore(0)
-    splitScreen.cameraFollowSprite(splitScreen.Camera.Camera4, Pronto)
-}
 function CEABP () {
-	
+    if (spriteutils.distanceBetween(Kord, Elemental_de_agua) < 5) {
+        Elemental_de_agua.follow(Kord, -5)
+        Elemental_de_agua.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Kord, Elemental_de_agua) > 0) {
+        Elemental_de_agua.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_agua.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 9 6 9 6 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 6 9 6 9 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 9 6 9 6 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 9 6 9 6 6 6 f . 
+                . f f f f f f f f f . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
 }
 function EDAB () {
     Eli_Shane.setVelocity(0, 0)
@@ -1889,11 +4250,89 @@ function Trixie_Arriba () {
     Trixie.setVelocity(0, -50)
     animation.runImageAnimation(
     Trixie,
-    assets.animation`Trixie caminando ariba detenida`,
+    [img`
+        .fffffffffffffffffffffffffffff.
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        .f4e3f4444444444444444444f3e4f.
+        ..ffff4444444444444444444ffff..
+        .....f4444444444444444444f.....
+        .....f4444444444444444444f.....
+        .....ff44444444444444444ff.....
+        .....fbfffffffffffffffffbf.....
+        .....fbbbbbbbbbbbbbbbbbbbf.....
+        .....fdddddddddddddddddddf.....
+        .....fdddddddddddddddddddf.....
+        .....fffffffffffffffffffff.....
+        .....f776f66777777777f7df......
+        .....fd76f66777777777f77f......
+        .....fffff9cbbbbbbbbbf7df......
+        .........ffffffffffffffff......
+        .........fccbbbbfccbbf.........
+        .........fccbbbbfccbbf.........
+        `,img`
+        .fffffffffffffffffffffffffffff.
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        .f4e3f4444444444444444444f3e4f.
+        ..ffff4444444444444444444ffff..
+        .....f4444444444444444444f.....
+        .....f4444444444444444444f.....
+        .....ff44444444444444444ff.....
+        .....fbfffffffffffffffffbf.....
+        .....fbbbbbbbbbbbbbbbbbbbf.....
+        .....fdddddddddddddddddddf.....
+        .....fdddddddddddddddddddf.....
+        .....fffffffffffffffffffff.....
+        .....fd7df66777777777f7df......
+        .....f776f66777777777f77f......
+        .....fd76f9cbbbbbbbbbf7df......
+        .....ffffffffffffffffffff......
+        .........fccbbbbfccbbf.........
+        .........fccbbbbfccbbf.........
+        `,img`
+        .fffffffffffffffffffffffffffff.
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        f44e3f4444444444444444444f3e44f
+        .f4e3f4444444444444444444f3e4f.
+        ..ffff4444444444444444444ffff..
+        .....f4444444444444444444f.....
+        .....f4444444444444444444f.....
+        .....ff44444444444444444ff.....
+        .....fbfffffffffffffffffbf.....
+        .....fbbbbbbbbbbbbbbbbbbbf.....
+        .....fdddddddddddddddddddf.....
+        .....fdddddddddddddddddddf.....
+        .....fffffffffffffffffffff.....
+        .....fd7df66777777777f77f......
+        .....f776f66777777777f7df......
+        .....fd76f9cbbbbbbbbbffff......
+        .....fffffffffffffffff.........
+        .........fccbbbbfccbbf.........
+        .........fccbbbbfccbbf.........
+        `],
     200,
     true
     )
 }
+sprites.onOverlap(SpriteKind.Player2, SpriteKind.Elementalagua, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_p2) {
+        Inventario_p2.push(otherSprite)
+    }
+})
 function ECAB () {
     Eli_Shane.setVelocity(0, 50)
     animation.runImageAnimation(
@@ -1982,6 +4421,12 @@ function Inventario4 () {
     Inventario_p4 = []
     Seleccion4 = 0
 }
+sprites.onOverlap(SpriteKind.Player2, SpriteKind.Elemental_De_Metal, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_p2) {
+        Inventario_p2.push(otherSprite)
+    }
+})
 function Tdab () {
     Trixie.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -2176,7 +4621,598 @@ function ACD () {
     )
 }
 function CEABK () {
-	
+    if (spriteutils.distanceBetween(Kord, Elemental_de_agua) < 2) {
+        Elemental_de_agua.follow(Kord, -5)
+        Elemental_de_agua.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Kord, Elemental_de_agua) > 0) {
+        Elemental_de_agua.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_agua.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 9 6 9 6 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 6 9 6 9 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 9 6 9 6 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 9 6 9 6 6 6 f . 
+                . f f f f f f f f f . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
+function CEMBP () {
+    if (spriteutils.distanceBetween(Pronto, ElementalMetal) < 2) {
+        ElementalMetal.follow(Pronto, -5)
+        ElementalMetal.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Pronto, ElementalMetal) > 0) {
+        ElementalMetal.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (ElementalMetal.vy < 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d c b c d d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d d c b c d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d c b c d d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d c b c d d d f . 
+                . f f f f f f f f f . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vy > 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vx < 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f f 1 d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vx > 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d 1 f f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
 }
 controller.player2.onEvent(ControllerEvent.Disconnected, function () {
     Trixie2()
@@ -2185,6 +5221,12 @@ sprites.onOverlap(SpriteKind.Player3, SpriteKind.Babosa, function (sprite, other
     sprites.destroy(otherSprite)
     if (Inventario_P3) {
         Inventario_P3.push(otherSprite)
+    }
+})
+sprites.onOverlap(SpriteKind.Player4, SpriteKind.Elementalagua, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_p4) {
+        Inventario_p4.push(otherSprite)
     }
 })
 function Zane_se_detiene_en_la_derecha () {
@@ -2289,6 +5331,333 @@ function Zane_se_detiene_en_la_derecha () {
     true
     )
 }
+function CETBT () {
+    if (spriteutils.distanceBetween(Trixie, Elemental_de_tierra2) < 2) {
+        Elemental_de_tierra2.follow(Trixie, -5)
+        Elemental_de_tierra2.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Trixie, Elemental_de_tierra2) > 0) {
+        Elemental_de_tierra2.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_tierra2.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d b c b d d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d d b c b d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d b c b d d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d b c b d d d f . . 
+                . . f f f f f f f f f . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f f 1 d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d 1 f f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
+sprites.onOverlap(SpriteKind.Player4, SpriteKind.Elemental_De_Metal, function (sprite, otherSprite) {
+    sprites.destroy(Elemental_de_tierra2)
+    if (Inventario_p4) {
+        Inventario_p4.push(Elemental_de_tierra2)
+    }
+})
 function Zane_se_detiene_arriba () {
     Kord.setVelocity(0, 0)
     animation.runImageAnimation(
@@ -2332,6 +5701,327 @@ function Zane_se_detiene_arriba () {
 controller.player2.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
     TCI()
 })
+function CETBK () {
+    if (spriteutils.distanceBetween(Kord, Elemental_de_tierra2) < 2) {
+        Elemental_de_tierra2.follow(Kord, -5)
+        Elemental_de_tierra2.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Kord, Elemental_de_tierra2) > 0) {
+        Elemental_de_tierra2.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_tierra2.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d b c b d d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d d b c b d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d d b c b d d f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d d d d d d d f f . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . f d d d d d d d f . . 
+                . . . f d d d d d f . . . 
+                . . f d d d d d d d f . . 
+                . . f d d d b d d d f . . 
+                . . . f d b b b d f . . . 
+                . . f d b c b d d d f . . 
+                . . f f f f f f f f f . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f f 1 d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_tierra2.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_tierra2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d 1 f f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f d f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 4 c f . . . f c 4 f . 
+                f d c f . . . . . f d d f 
+                f d d c f . . . f c d d f 
+                . f d d c f f f c d d f . 
+                f d f d d d d d d d f d f 
+                . f f d c d c d c d f f . 
+                . . f d d d c d d d f . . 
+                . . f 1 f d d d f 1 f . . 
+                . . f 4 4 f f f 4 4 f . . 
+                . . . f d 4 4 4 d f . . . 
+                . . f d d e e e d d f . . 
+                . . f d d e e e d d f . . 
+                . . . f d e e e d f . . . 
+                . . f d e e e e e d f . . 
+                . . f f f f f f f d f . . 
+                . . . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
 controller.player3.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
     Zane_camina_hacia_abajo()
 })
@@ -2430,7 +6120,113 @@ function Tdi () {
     )
 }
 controller.player4.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
-    PCI()
+    Pronto.setVelocity(-30, 0)
+    animation.runImageAnimation(
+    Pronto,
+    [img`
+        .fffffffffffffffffff...
+        .f555555555555554444f..
+        .f5fffffffffff5544444f.
+        .ffbbbbbbbbbbbff44224f.
+        .fdddddddddddbbf44224f.
+        .fdddddddddddbbff4444f.
+        .fddddddddddddbbbfffff.
+        .fddddddddddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .fdffffdddffffddbbbbbf.
+        .fd11ffdddff11ddbbbbbf.
+        .fd11ffdddff11ddbbbbbf.
+        .fddddd333ddddddbbbbbf.
+        .fddddd333ddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .ffffffffffffffffffffff
+        ..f11fcceeeeeecccf1111f
+        ..f99f9c11ee11cc9f9999f
+        ..fccf1c999999cc1fccccf
+        ..fffffffffffffffffffff
+        .....f7766f777766f.....
+        .....f7766f777766f.....
+        .....fffffffffffff.....
+        `,img`
+        .fffffffffffffffffff...
+        .f555555555555554444f..
+        .f5fffffffffff5544444f.
+        .ffbbbbbbbbbbbff44224f.
+        .fdddddddddddbbf44224f.
+        .fdddddddddddbbff4444f.
+        .fddddddddddddbbbfffff.
+        .fddddddddddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .fdffffdddffffddbbbbbf.
+        .fd11ffdddff11ddbbbbbf.
+        .fd11ffdddff11ddbbbbbf.
+        .fddddd333ddddddbbbbbf.
+        .fddddd333ddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        ffffffffffffffffffffff.
+        f1111fcceeeeeecccf11f..
+        f9999f9c11ee11cc9f99f..
+        fccccf1c999999cc1fccf..
+        fffffffffffffffffffff..
+        .....f6677f667777f.....
+        .....f6677f667777f.....
+        .....fffffffffffff.....
+        `,img`
+        .fffffffffffffffffff...
+        .f555555555555554444f..
+        .f5fffffffffff5544444f.
+        .ffbbbbbbbbbbbff44224f.
+        .fdddddddddddbbf44224f.
+        .fdddddddddddbbff4444f.
+        .fddddddddddddbbbfffff.
+        .fddddddddddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .fdffffdddffffddbbbbbf.
+        .fd11ffdddff11ddbbbbbf.
+        .fd11ffdddff11ddbbbbbf.
+        .fddddd333ddddddbbbbbf.
+        .fddddd333ddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .ffffffffffffffffffffff
+        ..f11fcceeeeeecccf1111f
+        ..f99f9c11ee11cc9f9999f
+        ..fccf1c999999cc1fccccf
+        ..fffffffffffffffffffff
+        .....f7766f777766f.....
+        .....f7766f777766f.....
+        .....fffffffffffff.....
+        `,img`
+        .fffffffffffffffffff...
+        .f555555555555554444f..
+        .f5fffffffffff5544444f.
+        .ffbbbbbbbbbbbff44224f.
+        .fdddddddddddbbf44224f.
+        .fdddddddddddbbff4444f.
+        .fddddddddddddbbbfffff.
+        .fddddddddddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        .fdffffdddffffddbbbbbf.
+        .fd11ffdddff11ddbbbbbf.
+        .fd11ffdddff11ddbbbbbf.
+        .fddddd333ddddddbbbbbf.
+        .fddddd333ddddddbbbbbf.
+        .fddddddddddddddbbbbbf.
+        ffffffffffffffffffffff.
+        f1111fcceeeeeecccf11f..
+        f9999f9c11ee11cc9f99f..
+        fccccf1c999999cc1fccf..
+        fffffffffffffffffffff..
+        .....f6677f667777f.....
+        .....f6677f667777f.....
+        .....fffffffffffff.....
+        `],
+    500,
+    true
+    )
 })
 sprites.onOverlap(SpriteKind.Player2, SpriteKind.Babosa, function (sprite, otherSprite) {
     sprites.destroy(otherSprite)
@@ -2438,15 +6234,693 @@ sprites.onOverlap(SpriteKind.Player2, SpriteKind.Babosa, function (sprite, other
         Inventario_p2.push(otherSprite)
     }
 })
+function Elemental_de_tierra () {
+    Elemental_de_tierra2 = sprites.create(img`
+        . . f f . . . . . f f . . 
+        . f 4 c f . . . f c 4 f . 
+        f d c f . . . . . f d d f 
+        f d d c f . . . f c d d f 
+        . f d d c f f f c d d f . 
+        . . f d d d d d d d f . . 
+        . . f d c d c d c d f . . 
+        . . f d d d c d d d f . . 
+        . . f 1 f d d d f 1 f . . 
+        . . f 4 4 f f f 4 4 f . . 
+        . . . f d 4 4 4 d f . . . 
+        . . f d d e e e d d f . . 
+        . . f d d e e e d d f . . 
+        . . . f d e e e d f . . . 
+        . . f d e e e e e d f . . 
+        . . f f f f f f f f f . . 
+        `, SpriteKind.ElementalTierra)
+    Elemental_de_tierra2.setPosition(90, 150)
+}
 function Inventario2 () {
     Inventario_p2 = []
     Seleccion2 = 0
 }
 function zane () {
-    Kord = sprites.create(assets.image`Kord Zane`, SpriteKind.Player3)
+    Kord = sprites.create(img`
+        ...............fff.....
+        ...............fddf....
+        ...............fdddf...
+        ...............fddddf..
+        ...............fddddf..
+        ...............fddddf..
+        ..ffffffffffffffddddfff
+        .ffccccf4444444fddddfcf
+        .fcccccf444444fdddddfcf
+        .fccccccff444fdddddfccf
+        .fccccccccfffffffffcccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccffffffffffffccf
+        .fccccff699999999999fcf
+        .fcccf6669dddd999ddddff
+        .ffff6666911ff999ff119f
+        .f6666666911ff999ff119f
+        .f66666669999999999999f
+        .f666666699999fff99999f
+        .f66666669999999999999f
+        fffffffffffffffffffffff
+        f9966fcccbb111b6ccf69f.
+        f4cccfaacbb1b6aac6fc4f.
+        f9c9cfaacb6b11aac6f9cf.
+        ffffffffffffffffffffff.
+        .....fcccbbbbfcbbbf....
+        .....fcccbbbbfcbbbf....
+        .....ffffffffffffff....
+        `, SpriteKind.Player3)
     info.player3.setScore(0)
     info.player3.setLife(7)
     splitScreen.cameraFollowSprite(splitScreen.Camera.Camera3, Kord)
+}
+function CEMBK () {
+    if (spriteutils.distanceBetween(Kord, ElementalMetal) < 2) {
+        ElementalMetal.follow(Kord, -5)
+        ElementalMetal.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Kord, ElementalMetal) > 0) {
+        ElementalMetal.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (ElementalMetal.vy < 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d c b c d d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d d c b c d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d d c b c d d f . 
+                . f f f f f f f f f . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f d d d b d d d f . 
+                . f d d d d d d d f . 
+                . f d d d b d d d f . 
+                . . f d d b d d f . . 
+                . f d d d b d d d f . 
+                . f d d d c d d d f . 
+                . . f d c b c d f . . 
+                . f d c b c d d d f . 
+                . f f f f f f f f f . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vy > 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vx < 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f f 1 d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (ElementalMetal.vx > 0) {
+            animation.runImageAnimation(
+            ElementalMetal,
+            [img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d 1 f f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f d f . 
+                . . . . . . . . f . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . f . . . . . . . f . 
+                f d f . . f . . f d f 
+                f d d f f b f f d d f 
+                f d d d f b f d d d f 
+                . f d b d b d b d f . 
+                . f d b d b d b d f . 
+                . f d d d b d d d f . 
+                . f 1 f d d d f 1 f . 
+                . f d b f f f b d f . 
+                . . f d b b b d f . . 
+                . f d d b b b d d f . 
+                . f d d b b b d d f . 
+                . . f d b b b d f . . 
+                . f d b b b b b d f . 
+                . f d f f f f f f f . 
+                . . f . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
+function CEHBT () {
+    if (spriteutils.distanceBetween(Trixie, Elemental_de_hielo2) < 2) {
+        Elemental_de_hielo2.follow(Trixie, -5)
+        Elemental_de_hielo2.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Trixie, Elemental_de_hielo2) > 0) {
+        Elemental_de_hielo2.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_hielo2.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 9 6 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 1 9 6 9 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 9 6 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 9 6 9 1 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
 }
 function Inventario1 () {
     inventario_P1 = []
@@ -2456,13 +6930,305 @@ function Pronto3 () {
     sprites.destroy(Pronto)
 }
 function CEABT () {
-	
+    if (spriteutils.distanceBetween(Trixie, Elemental_de_agua) < 2) {
+        Elemental_de_agua.follow(Trixie, -5)
+        Elemental_de_agua.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Trixie, Elemental_de_agua) > 0) {
+        Elemental_de_agua.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_agua.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 9 6 9 6 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 6 9 6 9 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 9 6 9 6 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 9 6 9 6 6 6 f . 
+                . f f f f f f f f f . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
 }
 function Zane2 () {
     sprites.destroy(Kord)
 }
 controller.player2.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Released, function () {
     TDD()
+})
+sprites.onOverlap(SpriteKind.Player4, SpriteKind.Elementalhielo, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (Inventario_p4) {
+        Inventario_p4.push(otherSprite)
+    }
 })
 controller.player2.onEvent(ControllerEvent.Connected, function () {
     Trxie()
@@ -2471,12 +7237,851 @@ function Zane_camina_hacia_arriba () {
     Kord.setVelocity(0, -80)
     animation.runImageAnimation(
     Kord,
-    assets.animation`Kord camina hacia abajo`,
+    [img`
+        ...........ff..........
+        ..........fddf.........
+        .........fddddf........
+        .........fdbbdf........
+        .........fdbbdf........
+        .........fbbbbf........
+        ..ffffffffffffffffffff.
+        .ffcccccf444444fcccccff
+        .fcccccccf4444fcccccccf
+        .fccccccccffffccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .ffffcccccccccccccfffff
+        .f666ffffffffffffff666f
+        .f66666666666666666666f
+        .f99966666666666666999f
+        .f99999999999999999999f
+        fffffffffffffffffffffff
+        f9966fccccccccccccf69f.
+        f4cccf6cccccccccccfc4f.
+        fc9c9f6bbbbbbbb6b6f9cf.
+        ffffffffffffffffffffff.
+        .....fcccbbbbfcbbbf....
+        .....fcccbbbbfcbbbf....
+        .....ffffffffffffff....
+        `,img`
+        ...........ff..........
+        ..........fddf.........
+        .........fddddf........
+        .........fdbbdf........
+        .........fdbbdf........
+        .........fbbbbf........
+        ..ffffffffffffffffffff.
+        .ffcccccf444444fcccccff
+        .fcccccccf4444fcccccccf
+        .fccccccccffffccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .fccccccccccccccccccccf
+        .ffffcccccccccccccfffff
+        .f666ffffffffffffff666f
+        .f66666666666666666666f
+        .f99966666666666666999f
+        .f99999999999999999999f
+        .ffffffffffffffffffffff
+        ..f96fccccccccccccf69f.
+        ..f4cf6cccccccccccfc4f.
+        ..fc9f6bbbbbbbb6b6f9cf.
+        ..ffffffffffffffffffff.
+        .....fcccbbbbfcbbbf....
+        .....fcccbbbbfcbbbf....
+        .....ffffffffffffff....
+        `,img`
+        ..........ff...........
+        .........fddf..........
+        ........fddddf.........
+        ........fdbbdf.........
+        ........fdbbdf.........
+        ........fbbbbf.........
+        .ffffffffffffffffffff..
+        ffcccccf444444fcccccff.
+        fcccccccf4444fcccccccf.
+        fccccccccffffccccccccf.
+        fccccccccccccccccccccf.
+        fccccccccccccccccccccf.
+        fccccccccccccccccccccf.
+        fccccccccccccccccccccf.
+        fccccccccccccccccccccf.
+        fccccccccccccccccccccf.
+        fccccccccccccccccccccf.
+        fffffcccccccccccccffff.
+        f666ffffffffffffff666f.
+        f66666666666666666666f.
+        f99966666666666666999f.
+        f99999999999999999999f.
+        fffffffffffffffffffffff
+        .f96fccccccccccccf6699f
+        .f4cfccccccccccc6fccc4f
+        .fc9f6b6bbbbbbbb6f9c9cf
+        .ffffffffffffffffffffff
+        ....fbbbcfbbbbcccf.....
+        ....fbbbcfbbbbcccf.....
+        ....ffffffffffffff.....
+        `],
     100,
     true
     )
 }
-function PCD () {
+sprites.onOverlap(SpriteKind.Player, SpriteKind.ElementalTierra, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (inventario_P1) {
+        inventario_P1.push(otherSprite)
+    }
+})
+controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
+    game.showLongText(inventario_P1, DialogLayout.Left)
+})
+function CETB () {
+    CETBE()
+    CETBT()
+    CETBK()
+    CETBP()
+}
+function TCI () {
+    Trixie.setVelocity(-50, 0)
+    animation.runImageAnimation(
+    Trixie,
+    [img`
+        .fffffffffffffffffffffffffffff.
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f444444444ff44feeeeef3e44f
+        f44e3f44fff444fddf44feeeef3e44f
+        f44e3f44fddf44fdddf44feeef3e44f
+        .f4e3fffddddf4fddddf44feef3e4f.
+        ..ffffdddddddffddddffffeeffff..
+        .....fddddddddddddddfeeeef.....
+        .....fd4444ddd4444ddbfeeef.....
+        .....fd1177ddd7711ddbfeeef.....
+        .....fd117fdddf711ddbbfeff.....
+        .....fddddddddddddddbbbfbf.....
+        .....fdddddfffddddddbbbbbf.....
+        .....fddddddddddddddbbbbbf.....
+        .....fffffffffffffffffffff.....
+        ......fd7f667ccc777c4f677f.....
+        ......f77f667777777ccf67df.....
+        ......fd7fccbbbbbbbbbfffff.....
+        ......ffffffffffffffff.........
+        .........fbbccfbbbbccf.........
+        .........fbbccfbbbbccf.........
+        .........fffffffffffff.........
+        `,img`
+        .fffffffffffffffffffffffffffff.
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f444444444ff44feeeeef3e44f
+        f44e3f44fff444fddf44feeeef3e44f
+        f44e3f44fddf44fdddf44feeef3e44f
+        .f4e3fffddddf4fddddf44feef3e4f.
+        ..ffffdddddddffddddffffeeffff..
+        .....fddddddddddddddfeeeef.....
+        .....fd4444ddd4444ddbfeeef.....
+        .....fd1177ddd7711ddbfeeef.....
+        .....fd117fdddf711ddbbfeff.....
+        .....fddddddddddddddbbbfbf.....
+        .....fdddddfffddddddbbbbbf.....
+        .....fddddddddddddddbbbbbf.....
+        .....fffffffffffffffffffff.....
+        ......fd7f6677ccc77c4fd7df.....
+        ......f77f667777777ccf677f.....
+        ......fd7fccbbbbbbbbbf67df.....
+        ......ffffffffffffffffffff.....
+        .........fccbbfccbbbbf.........
+        .........fccbbfccbbbbf.........
+        .........fffffffffffff.........
+        `,img`
+        .fffffffffffffffffffffffffffff.
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f44444444444444eeeeef3e44f
+        f44e3f444444444ff44feeeeef3e44f
+        f44e3f44fff444fddf44feeeef3e44f
+        f44e3f44fddf44fdddf44feeef3e44f
+        .f4e3fffddddf4fddddf44feef3e4f.
+        ..ffffdddddddffddddffffeeffff..
+        .....fddddddddddddddfeeeef.....
+        .....fd4444ddd4444ddbfeeef.....
+        .....fd1177ddd7711ddbfeeef.....
+        .....fd117fdddf711ddbbfeff.....
+        .....fddddddddddddddbbbfbf.....
+        .....fdddddfffddddddbbbbbf.....
+        .....fddddddddddddddbbbbbf.....
+        .....fffffffffffffffffffff.....
+        ......f77f667ccc777c4fd7df.....
+        ......fd7f667777777ccf677f.....
+        ......ffffccbbbbbbbbbf67df.....
+        .........fffffffffffffffff.....
+        .........fccbbfccbbbbf.........
+        .........fccbbfccbbbbf.........
+        .........fffffffffffff.........
+        `],
+    200,
+    true
+    )
+}
+controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Released, function () {
+    EDC()
+})
+function CEHBP () {
+    if (spriteutils.distanceBetween(Pronto, Elemental_de_hielo2) < 2) {
+        Elemental_de_hielo2.follow(Pronto, -5)
+        Elemental_de_hielo2.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Pronto, Elemental_de_hielo2) > 0) {
+        Elemental_de_hielo2.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_hielo2.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 9 6 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 1 9 6 9 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 1 9 6 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 1 1 1 6 6 f 9 f 
+                . f f 6 1 1 1 1 1 6 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . . f 1 1 1 1 1 f . . . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 1 1 9 1 1 1 f . . 
+                . . . f 1 9 9 9 1 f . . . 
+                . . f 1 9 6 9 1 1 1 f . . 
+                . . f f f f f f f f f . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_hielo2.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_hielo2,
+            [img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 f f f f f f f . . 
+                . . . f . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f f f . . 
+                . . . . . . . . . . . . . 
+                `,img`
+                . . f f . . . . . f f . . 
+                . f 6 6 f . . . f 6 6 f . 
+                f 6 6 f . . . . . f 6 6 f 
+                f 6 6 6 f . . . f 6 6 6 f 
+                . f 6 6 6 f f f 6 6 6 f . 
+                f 9 f 6 6 6 6 6 6 6 f 9 f 
+                . f f 1 6 6 d 6 6 1 f f . 
+                . . f 1 1 1 1 1 1 1 f . . 
+                . . f 1 9 1 9 1 9 1 f . . 
+                . . f 9 9 f f f 9 9 f . . 
+                . . . f 9 9 9 9 9 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f 1 1 9 1 9 1 1 f . . 
+                . . . f 1 9 1 9 1 f . . . 
+                . . f 1 1 9 9 9 1 1 f . . 
+                . . f f f f f f f 1 f . . 
+                . . . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Elementalhielo, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (inventario_P1) {
+        inventario_P1.push(otherSprite)
+    }
+})
+function CEABE () {
+    if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_agua) < 2) {
+        Elemental_de_agua.follow(Eli_Shane, -5)
+        Elemental_de_agua.setBounceOnWall(true)
+    } else if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_agua) > 0) {
+        Elemental_de_agua.setVelocity(randint(-10, 10), randint(-10, 10))
+        if (Elemental_de_agua.vy < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 9 6 9 6 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 6 9 6 9 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 6 9 6 9 6 6 f . 
+                . f f f f f f f f f . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 6 f . f f . 
+                . f d f 6 6 6 f d f . 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 6 6 6 6 6 6 6 f . 
+                . . f 6 6 6 6 6 f . . 
+                . f 6 6 6 9 6 6 6 f . 
+                . f 6 6 9 9 9 6 6 f . 
+                . . f 6 9 9 9 6 f . . 
+                . f 6 9 6 9 6 6 6 f . 
+                . f f f f f f f f f . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vy > 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx < 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 f 1 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `],
+            500,
+            true
+            )
+        } else if (Elemental_de_agua.vx > 0) {
+            animation.runImageAnimation(
+            Elemental_de_agua,
+            [img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 6 6 9 9 9 6 6 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . . f 6 9 9 9 6 6 f . 
+                . . f 6 f f f f f f . 
+                . . . f . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 1 f 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f f f f f f f f f . 
+                . . . . . . . . . . . 
+                `,img`
+                . . . . f f f . . . . 
+                . f f . f 9 f . f f . 
+                . f d f 9 9 9 f d f . 
+                . f 6 d 6 9 6 d 6 f . 
+                f 6 6 6 6 6 6 6 6 6 f 
+                . f 9 6 6 1 6 6 9 f . 
+                f 9 1 f 9 9 9 f 1 9 f 
+                . f 9 9 f f f 9 9 f . 
+                . . f 9 9 9 9 9 f . . 
+                . f 6 6 9 9 9 6 6 f . 
+                . f 6 9 6 9 6 9 6 f . 
+                . . f 6 9 6 9 6 f . . 
+                . f 6 6 9 9 9 6 f . . 
+                . f f f f f f 6 f . . 
+                . . . . . . . f . . . 
+                `],
+            500,
+            true
+            )
+        }
+    }
+}
+function Elemental_de_agua_Buena () {
+    Elemental_de_agua = sprites.create(img`
+        . . . . f f f . . . . 
+        . f f . f 9 f . f f . 
+        . f d f 9 9 9 f d f . 
+        . f 6 d 6 9 6 d 6 f . 
+        f 9 6 6 6 6 6 6 6 9 f 
+        . f 9 6 6 1 6 6 9 f . 
+        f 6 1 f 9 9 9 f 1 6 f 
+        . f 9 9 f f f 9 9 f . 
+        . . f 9 9 9 9 9 f . . 
+        . f 6 6 9 9 9 6 6 f . 
+        . f 6 9 6 9 6 9 6 f . 
+        . . f 6 9 6 9 6 f . . 
+        . f 6 6 9 9 9 6 6 f . 
+        . f f f f f f f f f . 
+        `, SpriteKind.Elementalagua)
+    Elemental_de_agua.setPosition(250, 30)
+}
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Babosa, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    if (inventario_P1) {
+        inventario_P1.push(otherSprite)
+    }
+})
+controller.player1.onEvent(ControllerEvent.Connected, function () {
+    Eli()
+})
+controller.player4.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
     Pronto.setVelocity(30, 0)
     animation.runImageAnimation(
     Pronto,
@@ -2584,129 +8189,6 @@ function PCD () {
     500,
     true
     )
-}
-controller.player1.onButtonEvent(ControllerButton.B, ControllerButtonEvent.Pressed, function () {
-    game.showLongText(inventario_P1, DialogLayout.Left)
-})
-function TCI () {
-    Trixie.setVelocity(-50, 0)
-    animation.runImageAnimation(
-    Trixie,
-    [img`
-        .fffffffffffffffffffffffffffff.
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f444444444ff44feeeeef3e44f
-        f44e3f44fff444fddf44feeeef3e44f
-        f44e3f44fddf44fdddf44feeef3e44f
-        .f4e3fffddddf4fddddf44feef3e4f.
-        ..ffffdddddddffddddffffeeffff..
-        .....fddddddddddddddfeeeef.....
-        .....fd4444ddd4444ddbfeeef.....
-        .....fd1177ddd7711ddbfeeef.....
-        .....fd117fdddf711ddbbfeff.....
-        .....fddddddddddddddbbbfbf.....
-        .....fdddddfffddddddbbbbbf.....
-        .....fddddddddddddddbbbbbf.....
-        .....fffffffffffffffffffff.....
-        ......fd7f667ccc777c4f677f.....
-        ......f77f667777777ccf67df.....
-        ......fd7fccbbbbbbbbbfffff.....
-        ......ffffffffffffffff.........
-        .........fbbccfbbbbccf.........
-        .........fbbccfbbbbccf.........
-        .........fffffffffffff.........
-        `,img`
-        .fffffffffffffffffffffffffffff.
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f444444444ff44feeeeef3e44f
-        f44e3f44fff444fddf44feeeef3e44f
-        f44e3f44fddf44fdddf44feeef3e44f
-        .f4e3fffddddf4fddddf44feef3e4f.
-        ..ffffdddddddffddddffffeeffff..
-        .....fddddddddddddddfeeeef.....
-        .....fd4444ddd4444ddbfeeef.....
-        .....fd1177ddd7711ddbfeeef.....
-        .....fd117fdddf711ddbbfeff.....
-        .....fddddddddddddddbbbfbf.....
-        .....fdddddfffddddddbbbbbf.....
-        .....fddddddddddddddbbbbbf.....
-        .....fffffffffffffffffffff.....
-        ......fd7f6677ccc77c4fd7df.....
-        ......f77f667777777ccf677f.....
-        ......fd7fccbbbbbbbbbf67df.....
-        ......ffffffffffffffffffff.....
-        .........fccbbfccbbbbf.........
-        .........fccbbfccbbbbf.........
-        .........fffffffffffff.........
-        `,img`
-        .fffffffffffffffffffffffffffff.
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f44444444444444eeeeef3e44f
-        f44e3f444444444ff44feeeeef3e44f
-        f44e3f44fff444fddf44feeeef3e44f
-        f44e3f44fddf44fdddf44feeef3e44f
-        .f4e3fffddddf4fddddf44feef3e4f.
-        ..ffffdddddddffddddffffeeffff..
-        .....fddddddddddddddfeeeef.....
-        .....fd4444ddd4444ddbfeeef.....
-        .....fd1177ddd7711ddbfeeef.....
-        .....fd117fdddf711ddbbfeff.....
-        .....fddddddddddddddbbbfbf.....
-        .....fdddddfffddddddbbbbbf.....
-        .....fddddddddddddddbbbbbf.....
-        .....fffffffffffffffffffff.....
-        ......f77f667ccc777c4fd7df.....
-        ......fd7f667777777ccf677f.....
-        ......ffffccbbbbbbbbbf67df.....
-        .........fffffffffffffffff.....
-        .........fccbbfccbbbbf.........
-        .........fccbbfccbbbbf.........
-        .........fffffffffffff.........
-        `],
-    200,
-    true
-    )
-}
-controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Released, function () {
-    EDC()
-})
-function CEABE () {
-	
-}
-function Elemental_de_agua_Buena () {
-    Elemental_de_agua = sprites.create(img`
-        . . . . f f f . . . . 
-        . f f . f 9 f . f f . 
-        . f d f 9 9 9 f d f . 
-        . f 6 d 6 9 6 d 6 f . 
-        f 9 6 6 6 6 6 6 6 9 f 
-        . f 9 6 6 1 6 6 9 f . 
-        f 6 1 f 9 9 9 f 1 6 f 
-        . f 9 9 f f f 9 9 f . 
-        . . f 9 9 9 9 9 f . . 
-        . f 6 6 9 9 9 6 6 f . 
-        . f 6 9 6 9 6 9 6 f . 
-        . . f 6 9 6 9 6 f . . 
-        . f 6 6 9 9 9 6 6 f . 
-        . f f f f f f f f f . 
-        `, SpriteKind.Elemental)
-}
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Babosa, function (sprite, otherSprite) {
-    sprites.destroy(otherSprite)
-    if (inventario_P1) {
-        inventario_P1.push(otherSprite)
-    }
-})
-controller.player1.onEvent(ControllerEvent.Connected, function () {
-    Eli()
-})
-controller.player4.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Pressed, function () {
-    PCD()
 })
 controller.player3.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, function () {
     Zane_camina_a_la_izquierda()
@@ -2720,113 +8202,31 @@ controller.player1.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pr
 controller.player1.onButtonEvent(ControllerButton.Down, ControllerButtonEvent.Pressed, function () {
     ECAB()
 })
-let Elemental_de_agua: Sprite = null
 let Seleccion_1 = 0
-let inventario_P1: Sprite[] = []
 let Seleccion2 = 0
 let Seleccion3 = 0
 let Seleccion4 = 0
+let Elemental_de_agua: Sprite = null
+let Elemental_planta: Sprite = null
+let ElementalMetal: Sprite = null
 let Inventario_p4: Sprite[] = []
 let Eli_Shane: Sprite = null
+let Trixie: Sprite = null
 let Inventario_p2: Sprite[] = []
 let Kord: Sprite = null
-let Pronto: Sprite = null
 let Inventario_P3: Sprite[] = []
-let Trixie: Sprite = null
+let Elemental_de_tierra2: Sprite = null
+let Elemental_de_hielo2: Sprite = null
+let inventario_P1: Sprite[] = []
+let Pronto: Sprite = null
 tiles.setCurrentTilemap(tilemap`level1`)
-Inventario1()
-Inventario2()
-Inventario3()
-Inventario4()
 Elemental_de_agua_Buena()
+Elemental_de_hielo()
+Elemental_de_tierra()
+ElementalMetal()
 game.onUpdateInterval(500, function () {
-    CEABE()
-    CEABT()
-    CEABK()
-    CEABP()
-})
-game.onUpdateInterval(500, function () {
-    if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_agua) > 2) {
-        Elemental_de_agua.follow(Eli_Shane, -5)
-    } else if (spriteutils.distanceBetween(Eli_Shane, Elemental_de_agua) < 0) {
-        Elemental_de_agua.setVelocity(randint(-10, 10), randint(-10, 10))
-        if (Elemental_de_agua.vy < 0) {
-        	
-        } else if (Elemental_de_agua.vy > 0) {
-        	
-        } else if (Elemental_de_agua.vx < 0) {
-            animation.runImageAnimation(
-            Elemental_de_agua,
-            [img`
-                . . . . f f f . . . . 
-                . f f . f 9 f . f f . 
-                . f d f 9 9 9 f d f . 
-                . f 6 d 6 9 6 d 6 f . 
-                f 6 6 6 6 6 6 6 6 6 f 
-                . f 9 6 6 1 6 6 9 f . 
-                f 9 f 1 9 9 9 f 1 9 f 
-                . f 9 9 f f f 9 9 f . 
-                . . f 9 9 9 9 9 f . . 
-                . f 6 6 9 9 9 6 6 f . 
-                . f 6 9 6 9 6 9 6 f . 
-                . . f 6 9 6 9 6 f . . 
-                . f 6 6 9 9 9 6 6 f . 
-                . f f f f f f f f f . 
-                . . . . . . . . . . . 
-                `,img`
-                . . . . f f f . . . . 
-                . f f . f 9 f . f f . 
-                . f d f 9 9 9 f d f . 
-                . f 6 d 6 9 6 d 6 f . 
-                f 6 6 6 6 6 6 6 6 6 f 
-                . f 9 6 6 1 6 6 9 f . 
-                f 9 6 6 9 9 9 6 6 9 f 
-                . f 9 9 f f f 9 9 f . 
-                . . f 9 9 9 9 9 f . . 
-                . f 6 6 9 9 9 6 6 f . 
-                . f 6 9 6 9 6 9 6 f . 
-                . . f 6 9 6 9 6 f . . 
-                . f 6 6 9 9 9 6 f . . 
-                . f f f f f f 6 f . . 
-                . . . . . . . f . . . 
-                `,img`
-                . . . . f f f . . . . 
-                . f f . f 9 f . f f . 
-                . f d f 9 9 9 f d f . 
-                . f 6 d 6 9 6 d 6 f . 
-                f 6 6 6 6 6 6 6 6 6 f 
-                . f 9 6 6 1 6 6 9 f . 
-                f 9 f 1 9 9 9 f 1 9 f 
-                . f 9 9 f f f 9 9 f . 
-                . . f 9 9 9 9 9 f . . 
-                . f 6 6 9 9 9 6 6 f . 
-                . f 6 9 6 9 6 9 6 f . 
-                . . f 6 9 6 9 6 f . . 
-                . f 6 6 9 9 9 6 6 f . 
-                . f f f f f f f f f . 
-                . . . . . . . . . . . 
-                `,img`
-                . . . . f f f . . . . 
-                . f f . f 9 f . f f . 
-                . f d f 9 9 9 f d f . 
-                . f 6 d 6 9 6 d 6 f . 
-                f 6 6 6 6 6 6 6 6 6 f 
-                . f 9 6 6 1 6 6 9 f . 
-                f 9 1 f 9 9 9 f 1 9 f 
-                . f 9 9 f f f 9 9 f . 
-                . . f 9 9 9 9 9 f . . 
-                . f 6 6 9 9 9 6 6 f . 
-                . f 6 9 6 9 6 9 6 f . 
-                . . f 6 9 6 9 6 f . . 
-                . . f 6 9 9 9 6 6 f . 
-                . . f 6 f f f f f f . 
-                . . . f . . . . . . . 
-                `],
-            500,
-            true
-            )
-        } else if (Elemental_de_agua.vx > 0) {
-        	
-        }
-    }
+    CEAB()
+    CEHB()
+    CETB()
+    CEMB()
 })
